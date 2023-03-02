@@ -1,7 +1,7 @@
 ### Environment
 Export env:
 ```console
-conda env export --no-builds > environment.yml
+$ export PYTHONNOUSERSITE=True && conda env export --no-builds > environment.yml && conda pack -n triton --force -o model_repository/triton_env.tar.gz
 ```
 ### USAGE
 Run triton server

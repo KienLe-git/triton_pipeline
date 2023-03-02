@@ -1,0 +1,22 @@
+name: "preprocess_image"
+backend: "python"
+max_batch_size: 256 
+input: [
+  {
+      name: "INPUT_0",
+      data_type: TYPE_UINT8,
+      dims: [ -1 ]
+  }
+]
+output: [
+  {
+      name: "OUTPUT_0",
+      data_type: TYPE_FP32,
+      dims: [ 3, 224, 224 ]
+  }
+]
+instance_group [{ kind: KIND_CPU }]
+parameters: {
+  key: "EXECUTION_ENV_PATH",
+  value: {string_value: "$$TRITON_MODEL_DIRECTORY/../triton_env.tar.gz"}
+}
