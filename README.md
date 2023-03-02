@@ -15,5 +15,5 @@ $  python image_client.py -m densenet_onnx -c 3 -s INCEPTION -i http -u localhos
 Check health metric
 [Link](https://github.com/triton-inference-server/server/blob/main/docs/user_guide/metrics.md)
 ```console
-$ curl localhost:8002/metrics -o heath.txt
+$ curl localhost:8002/metrics -o health.txt && cat health.txt
 ```
