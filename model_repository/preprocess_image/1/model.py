@@ -28,6 +28,12 @@ import numpy as np
 import sys
 import json
 import io
+import subprocess
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'Pillow'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'torchvision'])
 
 # triton_python_backend_utils is available in every Triton Python model. You
 # need to use this module to create inference requests and responses. It also
